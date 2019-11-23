@@ -65,7 +65,7 @@ This package contains the data files needed by the timezonemap library.
 %configure  --enable-introspection
 
 %build
-%make_buil
+%make_build
 
 %install
 %make_install
