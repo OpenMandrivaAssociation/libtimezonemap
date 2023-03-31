@@ -7,7 +7,7 @@
 Summary: Timezone map widget for GTK 3
 Name: libtimezonemap
 Version: 0.4.6
-Release: 1
+Release: 2
 Source0: http://archive.ubuntu.com/ubuntu/pool/main/libt/libtimezonemap/%{name}_%{version}.tar.gz
 License: GPLv3+
 Group:   System/Libraries
