@@ -7,11 +7,12 @@
 Summary: Timezone map widget for GTK 3
 Name: libtimezonemap
 Version: 0.4.6
-Release: 2
+Release: 3
 Source0: http://archive.ubuntu.com/ubuntu/pool/main/libt/libtimezonemap/%{name}_%{version}.tar.gz
 License: GPLv3+
 Group:   System/Libraries
 Url:   https://launchpad.net/ubuntu/+source/libtimezonemap/
+Patch1:	port-to-libsoup3.patch
 BuildRequires:  gnome-common
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(cairo)
@@ -19,7 +20,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(json-glib-1.0)
-BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:	pkgconfig(libsoup-3.0)
 
 %description
 This package contains a timezone map widget for GTK+3.
@@ -60,7 +61,7 @@ BuildArch:	noarch
 This package contains the data files needed by the timezonemap library.
 
 %prep
-%setup -q
+%autosetup -p1
 [[ -x configure ]] || ./autogen.sh
 %configure  --enable-introspection
 
@@ -92,6 +93,5 @@ This package contains the data files needed by the timezonemap library.
 %files data
 %doc README
 %dir %{_datadir}/libtimezonemap/
-%dir %{_datadir}/libtimezonemap/ui/
 %{_datadir}/libtimezonemap/backward
 %{_datadir}/libtimezonemap/ui/
